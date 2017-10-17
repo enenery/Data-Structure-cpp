@@ -109,7 +109,7 @@ int main()
 			{
 				nums.push(input.at(i) - '0');
 
-				if (nums.getTop() == 1 && (opes.getTopItem() == '*' || opes.getTopItem() == '/'))
+				if (nums.getTop() == 1 && (opes.getTopItem() == '*' || opes.getTopItem() == '/') && pares.isEmpty())
 				{
 					cout << "\nC";
 					right = nums.getTopItem();
@@ -194,7 +194,7 @@ int main()
 							if (input[i] == '+' || input[i] == '-')
 							{
 								
-								if (opes.getTopItem() == '*' || opes.getTopItem() == '/')
+								if (pares.isEmpty() && opes.getTopItem() == '*' || opes.getTopItem() == '/')
 								{
 									cout << "\nA: ";
 									right = nums.getTopItem();
